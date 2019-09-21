@@ -20,6 +20,7 @@ public class DetectPlayerCollision : MonoBehaviour
         Rn_Player = gameObject.GetComponent<Renderer>();
         TreadedOnTimes = 0;
         TileGoalMet = false;
+        Rn_Player.material.color = Color.blue;
     }
 
     private void OnTriggerEnter(Collider other)
