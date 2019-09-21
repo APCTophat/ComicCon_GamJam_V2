@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class DetectPlayerCollision : MonoBehaviour
 {
-    GameManager GameManagers;
+    GameManagers GameManagers;
     private int TreadedOnTimes;
     public int NumTreadTimesTillGoal;
    
 
-    private bool TileGoalMet = false;
+    private bool TileGoalMet ;
 
     void Start()
     {
         TreadedOnTimes = 0;
+        TileGoalMet = false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        Debug.Log("Collider");
+        if (other.gameObject.tag == "Player")
         {
             TreadedOnTimes++;
             BlockInteraction();
