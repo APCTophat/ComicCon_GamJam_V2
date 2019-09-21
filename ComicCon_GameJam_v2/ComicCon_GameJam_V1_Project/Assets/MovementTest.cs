@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnGrid : MonoBehaviour
+public class MovementTest : MonoBehaviour
 {
+    public Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,9 @@ public class SpawnGrid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Space))
+        {
+            rb.AddForce(1, 1, 0);
+        }
     }
 }

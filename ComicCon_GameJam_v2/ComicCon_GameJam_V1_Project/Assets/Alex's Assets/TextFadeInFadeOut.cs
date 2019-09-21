@@ -5,10 +5,10 @@ using UnityEngine.UI;
 public class TextFadeInFadeOut : MonoBehaviour
 {
     [SerializeField]
-    private Text level_Title;
+   private Text level_Title;
 
     [SerializeField]
-    private float timeToChange;
+   private float timeToChange;
 
     private Timer timer;
 
@@ -16,12 +16,12 @@ public class TextFadeInFadeOut : MonoBehaviour
     private List<float> floats;
   
     private void Start()
-    { 
-        level_Title.CrossFadeAlpha(0f, 0f, false);
+    {
 
+        level_Title = GetComponent<Text>();
         timer = new Timer(timeToChange, InFade);
         timer.Update = FadeIn;
-        //Invoke("InFade", timeToChange);
+       
     }
 
     private void Update()
@@ -50,11 +50,17 @@ public class TextFadeInFadeOut : MonoBehaviour
     private void InFade()
     {
         level_Title.CrossFadeAlpha(1f, timeToChange, false);
-        //Invoke("OutFade", timeToChange);
-        timer = new Timer(timeToChange, OutFade);
+        timer = new Timer(timeToChange, () =>
+        {
+            var color = level_Title.color;
+            color.a = 0;
+            level_Title.color = color;
+        });
+        timer.Update = FadeOut;
     }
+
     private void OutFade()
     {
-        level_Title.CrossFadeAlpha(0f, timeToChange, false);
+        ///evel_Title.CrossFadeAlpha(0f, timeToChange, false);
     }
 }
