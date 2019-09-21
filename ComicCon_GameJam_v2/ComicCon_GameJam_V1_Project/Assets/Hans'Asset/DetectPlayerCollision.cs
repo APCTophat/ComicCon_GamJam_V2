@@ -15,11 +15,13 @@ public class DetectPlayerCollision : MonoBehaviour
     Renderer Rn_Player;
     void Start()
     {
+        
         GameManager = GameObject.FindGameObjectWithTag("Game Manager");
         GameManagers = GameManager.GetComponent<GameManagers>();
         Rn_Player = gameObject.GetComponent<Renderer>();
         TreadedOnTimes = 0;
         TileGoalMet = false;
+        Rn_Player.material.color = Color.blue;
     }
 
     private void OnTriggerEnter(Collider other)
