@@ -7,12 +7,13 @@ public class DetectPlayerCollision : MonoBehaviour
     GameManagers GameManagers;
     private int TreadedOnTimes;
     public int NumTreadTimesTillGoal;
-   
+    public GameObject GameManager;
 
     private bool TileGoalMet ;
 
     void Start()
     {
+        GameManagers = GameManager.GetComponent<GameManagers>();
         TreadedOnTimes = 0;
         TileGoalMet = false;
     }
@@ -22,6 +23,7 @@ public class DetectPlayerCollision : MonoBehaviour
         Debug.Log("Collider");
         if (other.gameObject.tag == "Player")
         {
+            Debug.Log("Collider");
             TreadedOnTimes++;
             BlockInteraction();
         }

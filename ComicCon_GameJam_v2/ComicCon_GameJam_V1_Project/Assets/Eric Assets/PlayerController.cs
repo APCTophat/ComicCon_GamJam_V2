@@ -15,8 +15,6 @@ public class PlayerController : MonoBehaviour
 
     bool Move = false;
 
-    
-
     void Start()
     {
         Tr_Player = gameObject.GetComponent<Transform>();
@@ -71,7 +69,7 @@ public class PlayerController : MonoBehaviour
 
     void SetLerpCharacter()
     {
-        LerpStart = new Vector3(Tr_Player.position.x, Tr_Player.position.y, Tr_Player.position.z);
+        LerpStart = Tr_Player.position;
         An_Player.SetTrigger("Jump");
         Move = true;
     }
