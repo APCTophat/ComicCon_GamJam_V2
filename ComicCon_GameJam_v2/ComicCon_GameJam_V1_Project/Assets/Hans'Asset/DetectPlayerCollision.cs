@@ -11,46 +11,37 @@ public class DetectPlayerCollision : MonoBehaviour
 
     private bool TileGoalMet ;
 
-    bool Interacted = false;
-    Renderer Rn_Player;
+    public StandardCube CubeType;
+
     void Start()
     {
+        
         GameManager = GameObject.FindGameObjectWithTag("Game Manager");
         GameManagers = GameManager.GetComponent<GameManagers>();
-        Rn_Player = gameObject.GetComponent<Renderer>();
         TreadedOnTimes = 0;
         TileGoalMet = false;
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        Debug.Log("Collider");
-        if (other.gameObject.tag == "Player")
+
+        if (other.gameObject.tag == "Player" && CubeType.CubeType == 0)
         {
-            SwapBlockType();
+            CubeType.SwapBlockType();
             Debug.Log("Collider");
             TreadedOnTimes++;
             BlockInteraction();
         }
     }
 
-    void SwapBlockType()
+    private void OnTriggerExit(Collider other)
     {
-        if (Interacted == false)
+        if (other.gameObject.tag == "Player" && CubeType.CubeType == 1)
         {
-            Rn_Player.material.color = Color.red;
-            Interacted = !Interacted;
+            CubeType.SetBlockSolid();
         }
-        else if (Interacted == true)
-        {
-            Rn_Player.material.color = Color.blue;
-            Interacted = !Interacted;
-        }
-
-
     }
-
 
 
     public void BlockInteraction()

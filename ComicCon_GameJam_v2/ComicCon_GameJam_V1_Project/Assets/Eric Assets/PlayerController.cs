@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     RaycastHit hit;
 
     Vector3[] Directions;
-
+    bool[] DirectionOK;
 
 
     void Start()
@@ -28,6 +28,13 @@ public class PlayerController : MonoBehaviour
         Directions[1] = Vector3.back;
         Directions[2] = Vector3.right;
         Directions[3] = Vector3.left;
+
+        DirectionOK = new bool[4];
+        for (int i = 0; i < 4; i++)
+        {
+            DirectionOK[i] = true;
+        }
+
     }
 
     void Update()
@@ -50,10 +57,12 @@ public class PlayerController : MonoBehaviour
                 if (hit.transform.tag == "Barrier")
                 {
                     Debug.DrawRay(transform.position, transform.TransformDirection(Directions[i]) * hit.distance, Color.green);
+                    DirectionOK[i] = false;
                 }
                 else
                 {
                     Debug.DrawRay(transform.position, transform.TransformDirection(Directions[i]) * 10, Color.white);
+                    DirectionOK[i] = true;
                 }
             }
         }
@@ -77,22 +86,22 @@ public class PlayerController : MonoBehaviour
     void CheckInput()
     {
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && DirectionOK[0] == true)
         {
             LerpEnd = new Vector3(Tr_Player.position.x, Tr_Player.position.y, Tr_Player.position.z + MovementUnit);
             SetLerpCharacter();
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && DirectionOK[1] == true)
         {
             LerpEnd = new Vector3(Tr_Player.position.x, Tr_Player.position.y, Tr_Player.position.z - MovementUnit);
             SetLerpCharacter();
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && DirectionOK[3] == true)
         {
             LerpEnd = new Vector3(Tr_Player.position.x - MovementUnit, Tr_Player.position.y, Tr_Player.position.z);
             SetLerpCharacter();
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && DirectionOK[2] == true)
         {
             LerpEnd = new Vector3(Tr_Player.position.x + MovementUnit, Tr_Player.position.y, Tr_Player.position.z);
             SetLerpCharacter();
