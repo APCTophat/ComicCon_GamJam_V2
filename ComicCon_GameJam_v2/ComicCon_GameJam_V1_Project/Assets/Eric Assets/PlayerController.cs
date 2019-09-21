@@ -14,20 +14,52 @@ public class PlayerController : MonoBehaviour
     float LerpSpeed = 0.1f;
 
     bool Move = false;
+    RaycastHit hit;
+
+    Vector3[] Directions;
+
+
 
     void Start()
     {
         Tr_Player = gameObject.GetComponent<Transform>();
+        Directions = new Vector3[4];
+        Directions[0] = Vector3.forward;
+        Directions[1] = Vector3.back;
+        Directions[2] = Vector3.right;
+        Directions[3] = Vector3.left;
     }
 
     void Update()
     {
+        CheckifCanMove();
         if (Move == false)
         {
             CheckInput();
         }
         LerpCharacter();
     }
+
+    void CheckifCanMove()
+    {
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Directions[i]), out hit, Mathf.Infinity))
+            {
+                if (hit.transform.tag == "Barrier")
+                {
+                    Debug.DrawRay(transform.position, transform.TransformDirection(Directions[i]) * hit.distance, Color.green);
+                }
+                else
+                {
+                    Debug.DrawRay(transform.position, transform.TransformDirection(Directions[i]) * 10, Color.white);
+                }
+            }
+        }
+
+    }
+
 
     void LerpCharacter()
     {   if (Move == true)
