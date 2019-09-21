@@ -24,18 +24,18 @@ public class Timer
 
     public Timer (float amount, Action onComplete)
     {
-        this.amount = amount;
+        this.amount = CurrentTime = amount;
         complete = onComplete;
     }
 
     public void Tick (float deltaTime)
     {
-        amount -= deltaTime;
+        CurrentTime -= deltaTime;
         if ( Update != null )
         {
             Update(CurrentTime, NormlisedTime);
         }
-        if ( amount <= 0 )
+        if (CurrentTime <= 0 )
         {
             if ( complete != null )
             {
