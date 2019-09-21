@@ -11,15 +11,19 @@ public class DetectPlayerCollision : MonoBehaviour
 
     private bool TileGoalMet ;
 
+    bool Interacted = false;
+    Renderer Rn_Player;
     void Start()
     {
         GameManagers = GameManager.GetComponent<GameManagers>();
+        Rn_Player = gameObject.GetComponent<Renderer>();
         TreadedOnTimes = 0;
         TileGoalMet = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        SwapBlockType();
         Debug.Log("Collider");
         if (other.gameObject.tag == "Player")
         {
@@ -28,6 +32,25 @@ public class DetectPlayerCollision : MonoBehaviour
             BlockInteraction();
         }
     }
+
+    void SwapBlockType()
+    {
+        if (Interacted == false)
+        {
+            Rn_Player.material.color = Color.red;
+            Interacted = !Interacted;
+        }
+        else if (Interacted == true)
+        {
+            Rn_Player.material.color = Color.blue;
+            Interacted = !Interacted;
+        }
+
+
+    }
+
+
+
     public void BlockInteraction()
     {
         if (TreadedOnTimes == NumTreadTimesTillGoal)
