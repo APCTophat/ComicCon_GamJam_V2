@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     Transform Tr_Player;
     public float MovementUnit;
-    Animator An_Player;
+    public Animator An_Player;
 
     Vector3 LerpStart;
     Vector3 LerpEnd;
@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         Tr_Player = gameObject.GetComponent<Transform>();
-        An_Player = gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -70,7 +69,8 @@ public class PlayerController : MonoBehaviour
 
     void SetLerpCharacter()
     {
-        LerpStart = new Vector3(Tr_Player.position.x, Tr_Player.position.y, Tr_Player.position.z);
+        LerpStart = Tr_Player.position;
+        An_Player.SetTrigger("Jump");
         Move = true;
     }
 }
