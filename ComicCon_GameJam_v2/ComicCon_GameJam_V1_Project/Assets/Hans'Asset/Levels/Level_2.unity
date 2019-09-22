@@ -3672,7 +3672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e187c358e6d0f4785a41c62f010a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Goal: 9
+  Goal: 10
   GoalCounter: 0
   LevelFinishUI: {fileID: 2001646658}
 --- !u!4 &1409161407
