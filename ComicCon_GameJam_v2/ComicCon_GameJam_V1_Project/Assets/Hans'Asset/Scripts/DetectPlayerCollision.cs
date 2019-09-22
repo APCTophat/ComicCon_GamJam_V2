@@ -5,23 +5,27 @@ using UnityEngine;
 public class DetectPlayerCollision : MonoBehaviour
 {
     GameManagers GameManagers;
+    GameObject GameManager;
+    GameObject StandardCube;
     private int TreadedOnTimes;
     public int NumTreadTimesTillGoal;
-   GameObject GameManager;
-
+  
+    private Animator ThisObjectsAnim;
     private bool TileGoalMet ;
 
     bool Interacted = false;
     Renderer Rn_Player;
     void Start()
     {
-        
+        StandardCube = this.gameObject;
         GameManager = GameObject.FindGameObjectWithTag("Game Manager");
         GameManagers = GameManager.GetComponent<GameManagers>();
         Rn_Player = gameObject.GetComponent<Renderer>();
         TreadedOnTimes = 0;
         TileGoalMet = false;
         Rn_Player.material.color = Color.blue;
+        ThisObjectsAnim = GetComponent<Animator>();
+        ThisObjectsAnim.SetInteger("NumTimesTouched", TreadedOnTimes);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,9 +46,17 @@ public class DetectPlayerCollision : MonoBehaviour
                 TreadedOnTimes++;
             }
             BlockInteraction();
+            ThisObjectsAnim.SetInteger("NumTimesTouched", TreadedOnTimes);
         }
     }
-
+    private void OnTriggerExit(Collider other)
+    {
+        if(TreadedOnTimes == 2)
+        {
+            ThisObjectsAnim.Play("Tree");
+            StandardCube.GetComponent<StandardCube>().SetBlockSolid();
+        }
+    }
     void SwapBlockType()
     {
         if (Interacted == false)

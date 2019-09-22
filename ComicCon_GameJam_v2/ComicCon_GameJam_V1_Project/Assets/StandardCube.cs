@@ -7,7 +7,7 @@ public class StandardCube : MonoBehaviour
     bool Interacted = false;
     Renderer Rn_Player;
     public int CubeType;
-
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,7 @@ public class StandardCube : MonoBehaviour
         {
             Rn_Player.material.color = Color.green;
         }
+        
     }
 
     // Update is called once per frame
@@ -30,10 +31,8 @@ public class StandardCube : MonoBehaviour
 
     public void SetBlockSolid()
     {
-        gameObject.transform.position = new Vector3(transform.position.x, transform.position.y + 1 ,transform.position.z);
-        Rn_Player.material.color = Color.red;
+        
         this.gameObject.tag = "Barrier";
-
     }
 
     public void SwapBlockType()
