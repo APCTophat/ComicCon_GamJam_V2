@@ -31,10 +31,8 @@ public class StandardCube : MonoBehaviour
 
     public void SetBlockSolid()
     {
-        gameObject.transform.position = new Vector3(transform.position.x, transform.position.y + 1 ,transform.position.z);
-        Rn_Player.material.color = Color.red;
+        
         this.gameObject.tag = "Barrier";
-
     }
 
     public void SwapBlockType()
