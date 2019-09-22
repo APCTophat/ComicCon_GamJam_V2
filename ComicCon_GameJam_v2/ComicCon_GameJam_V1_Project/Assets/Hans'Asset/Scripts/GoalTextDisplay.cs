@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class GoalTextDisplay : MonoBehaviour
 {
     Text ThisObject;
+    public GameObject GameManagers;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,6 @@ public class GoalTextDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        ThisObject.text = ""+GameManagers.GetComponent<GameManagers>().GoalCounter;
     }
 }

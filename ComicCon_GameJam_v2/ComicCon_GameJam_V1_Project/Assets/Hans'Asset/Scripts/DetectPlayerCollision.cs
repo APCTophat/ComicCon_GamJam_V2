@@ -8,7 +8,7 @@ public class DetectPlayerCollision : MonoBehaviour
     private int TreadedOnTimes;
     public int NumTreadTimesTillGoal;
    GameObject GameManager;
-
+    private Animator ThisObjectsAnim;
     private bool TileGoalMet ;
 
     bool Interacted = false;
@@ -22,6 +22,8 @@ public class DetectPlayerCollision : MonoBehaviour
         TreadedOnTimes = 0;
         TileGoalMet = false;
         Rn_Player.material.color = Color.blue;
+        ThisObjectsAnim = GetComponent<Animator>();
+        ThisObjectsAnim.SetInteger("NumTimesTouched", TreadedOnTimes);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,6 +44,7 @@ public class DetectPlayerCollision : MonoBehaviour
                 TreadedOnTimes++;
             }
             BlockInteraction();
+            ThisObjectsAnim.SetInteger("NumTimesTouched", TreadedOnTimes);
         }
     }
 

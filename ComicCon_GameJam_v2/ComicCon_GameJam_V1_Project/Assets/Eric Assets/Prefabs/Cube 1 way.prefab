@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ca1633e002d3347afb329202ef2075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumTreadTimesTillGoal: 1
+  NumTreadTimesTillGoal: 2
 --- !u!114 &1206752073809968013
 MonoBehaviour:
   m_ObjectHideFlags: 0

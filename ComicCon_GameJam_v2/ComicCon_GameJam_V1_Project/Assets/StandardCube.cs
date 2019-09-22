@@ -7,7 +7,7 @@ public class StandardCube : MonoBehaviour
     bool Interacted = false;
     Renderer Rn_Player;
     public int CubeType;
-
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,7 @@ public class StandardCube : MonoBehaviour
         {
             Rn_Player.material.color = Color.green;
         }
+        
     }
 
     // Update is called once per frame
