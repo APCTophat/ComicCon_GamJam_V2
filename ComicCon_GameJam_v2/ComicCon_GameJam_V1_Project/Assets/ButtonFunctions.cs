@@ -37,5 +37,14 @@ public class ButtonFunctions : MonoBehaviour
     {
         SceneManager.LoadScene(4);
     }
+    public void LoadLevel6()
+    {
+        SceneManager.LoadScene(5);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 
 }
