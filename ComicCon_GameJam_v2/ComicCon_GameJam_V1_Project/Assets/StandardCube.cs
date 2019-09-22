@@ -31,7 +31,6 @@ public class StandardCube : MonoBehaviour
 
     public void SetBlockSolid()
     {
-        
         this.gameObject.tag = "Barrier";
     }
 

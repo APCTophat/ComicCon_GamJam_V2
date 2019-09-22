@@ -51,7 +51,7 @@ public class DetectPlayerCollision : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if(TreadedOnTimes == 2)
+        if (TreadedOnTimes == 2 && (gameObject.tag!= ("Ice")))
         {
             ThisObjectsAnim.Play("Tree");
             StandardCube.GetComponent<StandardCube>().SetBlockSolid();
