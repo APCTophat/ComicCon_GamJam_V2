@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Hans'Asset/Levels/Level_1.1.unity
+    guid: b401f90f6dbffbc4ca08e96712733a7c
+  - enabled: 1
+    path: Assets/Hans'Asset/Levels/Level_2.unity
+    guid: ba5dac6ff0c4ccd428be06a15bd1a537
+  - enabled: 1
+    path: Assets/Hans'Asset/Levels/Level_3.unity
+    guid: 3b0f6fd686a43a84ab877db813c9f0e7
+  - enabled: 1
+    path: Assets/Hans'Asset/Levels/Level_4.unity
+    guid: 1e79e82765a5bb446ba9a7ed54c87364
+  - enabled: 1
+    path: Assets/Hans'Asset/Levels/Level_5.unity
+    guid: b97963c098e6e3347ac16a6aca15c65e
+  - enabled: 1
+    path: Assets/Hans'Asset/Levels/Level_6.unity
+    guid: e9d3d5eb66381b94da853cc3cbbbad22
   m_configObjects: {}
