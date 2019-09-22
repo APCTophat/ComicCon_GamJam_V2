@@ -23,7 +23,7 @@ public class TextFadeInFadeOut : MonoBehaviour
         timer.Update = FadeIn;
        
     }
-
+    
     private void Update()
     {
         if ( timer == null )
