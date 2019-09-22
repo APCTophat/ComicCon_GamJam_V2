@@ -11,8 +11,9 @@ public class UISound : MonoBehaviour
     public void Hover()
     {
         HoverSound.Play();
+    }
 
-    }public void Press()
+    public void Press()
     {
         PressSound.Play();
     }

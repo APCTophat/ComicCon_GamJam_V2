@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     Vector3 LerpStart;
     Vector3 LerpEnd;
 
+    public AudioSource MoveSound;
+
     float LerpSpeed = 0.1f;
 
     bool Move = false;
@@ -40,10 +42,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         CheckifCanMove();
+
         if (Move == false)
         {
             CheckInput();
         }
+
         LerpCharacter();
     }
 
@@ -90,21 +94,29 @@ public class PlayerController : MonoBehaviour
         {
             LerpEnd = new Vector3(Tr_Player.position.x, Tr_Player.position.y, Tr_Player.position.z + MovementUnit);
             SetLerpCharacter();
+
+            MoveSound.Play();
         }
         if (Input.GetKeyDown(KeyCode.S) && DirectionOK[1] == true)
         {
             LerpEnd = new Vector3(Tr_Player.position.x, Tr_Player.position.y, Tr_Player.position.z - MovementUnit);
             SetLerpCharacter();
+
+            MoveSound.Play();
         }
         if (Input.GetKeyDown(KeyCode.A) && DirectionOK[3] == true)
         {
             LerpEnd = new Vector3(Tr_Player.position.x - MovementUnit, Tr_Player.position.y, Tr_Player.position.z);
             SetLerpCharacter();
+
+            MoveSound.Play();
         }
         if (Input.GetKeyDown(KeyCode.D) && DirectionOK[2] == true)
         {
             LerpEnd = new Vector3(Tr_Player.position.x + MovementUnit, Tr_Player.position.y, Tr_Player.position.z);
             SetLerpCharacter();
+
+            MoveSound.Play();
         }
     }
 
