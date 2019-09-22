@@ -119,11 +119,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2830905021949512242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f033f82180b6db24b90c926d071f966f, type: 3}
+  m_Script: {fileID: 11500000, guid: 50ca1633e002d3347afb329202ef2075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NumTreadTimesTillGoal: 1
-  CubeType: {fileID: 202164057897011255}
 --- !u!114 &202164057897011255
 MonoBehaviour:
   m_ObjectHideFlags: 0
