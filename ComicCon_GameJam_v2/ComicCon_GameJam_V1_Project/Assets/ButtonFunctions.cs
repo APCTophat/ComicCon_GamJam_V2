@@ -47,4 +47,9 @@ public class ButtonFunctions : MonoBehaviour
         Application.Quit();
     }
 
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+    }
+
 }

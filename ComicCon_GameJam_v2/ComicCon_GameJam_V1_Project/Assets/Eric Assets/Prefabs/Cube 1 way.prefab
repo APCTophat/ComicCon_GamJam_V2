@@ -407,16 +407,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3834921339258321300}
     m_Modifications:
-    - target: {fileID: 7083451468905998734, guid: 70892b0caabe25440883dd94fb7b04af,
-        type: 3}
-      propertyPath: m_Name
-      value: Desert 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7083451468905998734, guid: 70892b0caabe25440883dd94fb7b04af,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4735631526540284659, guid: 70892b0caabe25440883dd94fb7b04af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -471,6 +461,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083451468905998734, guid: 70892b0caabe25440883dd94fb7b04af,
+        type: 3}
+      propertyPath: m_Name
+      value: Desert 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083451468905998734, guid: 70892b0caabe25440883dd94fb7b04af,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70892b0caabe25440883dd94fb7b04af, type: 3}

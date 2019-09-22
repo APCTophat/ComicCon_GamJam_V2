@@ -15,6 +15,8 @@ public class GoalTextDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ThisObject.text = GameManagers.GetComponent<GameManagers>().Goal+"/"+GameManagers.GetComponent<GameManagers>().GoalCounter;
+        //ThisObject.text = GameManagers.GetComponent<GameManagers>().Goal+"/"+GameManagers.GetComponent<GameManagers>().GoalCounter;
+
+        ThisObject.text = GameManagers.GetComponent<GameManagers>().GoalCounter + "/" + GameManagers.GetComponent<GameManagers>().Goal;
     }
 }
