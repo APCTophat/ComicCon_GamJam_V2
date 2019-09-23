@@ -8122,7 +8122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e187c358e6d0f4785a41c62f010a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Goal: 21
+  Goal: 22
   GoalCounter: 0
   LevelFinishUI: {fileID: 178257867}
   WinSound: {fileID: 179139040}
