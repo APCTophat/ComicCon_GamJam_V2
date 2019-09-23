@@ -17,6 +17,11 @@ public class ButtonFunctions : MonoBehaviour
         
     }
 
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void LoadLevel1()
     {
         SceneManager.LoadScene(1);
