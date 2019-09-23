@@ -9,7 +9,9 @@ public class DetectPlayerCollision : MonoBehaviour
     GameObject StandardCube;
     private int TreadedOnTimes;
     public int NumTreadTimesTillGoal;
-  
+
+    public AudioSource TreeSound;
+
     private Animator ThisObjectsAnim;
     private bool TileGoalMet ;
 
@@ -55,6 +57,8 @@ public class DetectPlayerCollision : MonoBehaviour
         {
             ThisObjectsAnim.Play("Tree");
             StandardCube.GetComponent<StandardCube>().SetBlockSolid();
+
+            TreeSound.Play();
         }
     }
     void SwapBlockType()
