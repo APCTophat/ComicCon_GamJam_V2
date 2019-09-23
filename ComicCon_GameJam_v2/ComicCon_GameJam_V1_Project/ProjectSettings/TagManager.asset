@@ -7,6 +7,7 @@ TagManager:
   - Game Manager
   - Barrier
   - Ice
+  - music
   layers:
   - Default
   - TransparentFX
