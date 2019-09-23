@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
     void CheckInput()
     {
 
-        if (Input.GetKeyDown(KeyCode.W) && DirectionOK[0] == true)
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && DirectionOK[0] == true)
         {
             LerpEnd = new Vector3(Tr_Player.position.x, Tr_Player.position.y, Tr_Player.position.z + MovementUnit);
             SetLerpCharacter();
