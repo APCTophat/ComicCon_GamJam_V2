@@ -14,6 +14,11 @@ public class GameManagers : MonoBehaviour
         {
             LevelFinishUI.SetActive(true);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            LevelFinishUI.SetActive(true);
+        }
     }
     void GoalComplete()
     {
