@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Nadine's Assets/Scenes/Menu Scene.unity
+    guid: 22e2ff1d20e1a454091aec7d10a1ec4f
+  - enabled: 1
     path: Assets/Hans'Asset/Levels/Level_1.1.unity
     guid: b401f90f6dbffbc4ca08e96712733a7c
   - enabled: 1
@@ -23,9 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Hans'Asset/Levels/Level_6.unity
     guid: e9d3d5eb66381b94da853cc3cbbbad22
-  - enabled: 1
-    path: Assets/Nadine's Assets/Scenes/Menu Scene.unity
-    guid: 22e2ff1d20e1a454091aec7d10a1ec4f
   - enabled: 1
     path: Assets/Nadine's Assets/Scenes/Credits_Scene.unity
     guid: ed5fa50cbd65d764d832bb765ae6a85f
