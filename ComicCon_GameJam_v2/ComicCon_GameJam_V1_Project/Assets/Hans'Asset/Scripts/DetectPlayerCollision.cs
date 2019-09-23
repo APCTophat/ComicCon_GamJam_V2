@@ -17,17 +17,22 @@ public class DetectPlayerCollision : MonoBehaviour
 
     bool Interacted = false;
     Renderer Rn_Player;
+
+    private void Awake()
+    {
+        ThisObjectsAnim = GetComponent<Animator>();
+        TreadedOnTimes = 0;
+        ThisObjectsAnim.SetInteger("NumTimesTouched", TreadedOnTimes);
+    }
+
     void Start()
     {
         StandardCube = this.gameObject;
         GameManager = GameObject.FindGameObjectWithTag("Game Manager");
         GameManagers = GameManager.GetComponent<GameManagers>();
         Rn_Player = gameObject.GetComponent<Renderer>();
-        TreadedOnTimes = 0;
         TileGoalMet = false;
-        Rn_Player.material.color = Color.blue;
-        ThisObjectsAnim = GetComponent<Animator>();
-        ThisObjectsAnim.SetInteger("NumTimesTouched", TreadedOnTimes);
+        Rn_Player.material.color = Color.blue;  
     }
 
     private void OnTriggerEnter(Collider other)

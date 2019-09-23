@@ -232,7 +232,7 @@ PrefabInstance:
     - target: {fileID: 4363117889681729368, guid: 17eee98ad50f5304a9c4fa7d0233f29b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17eee98ad50f5304a9c4fa7d0233f29b, type: 3}
@@ -334,11 +334,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5364452972183653247, guid: 8d466f4363637e840abecf75e5fa81a8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2596269008943819070, guid: 8d466f4363637e840abecf75e5fa81a8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -413,6 +408,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301386772823261289, guid: eaf571daf42939c4b974ed883050231f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5003264515015914106, guid: eaf571daf42939c4b974ed883050231f,
         type: 3}
