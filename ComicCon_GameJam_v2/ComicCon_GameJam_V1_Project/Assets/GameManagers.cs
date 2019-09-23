@@ -47,4 +47,9 @@ public class GameManagers : MonoBehaviour
             GoalCounter--;
         }
     }
+
+    public void ActivateMenu()
+    {
+        LevelFinishUI.SetActive(true);
+    }
 }
