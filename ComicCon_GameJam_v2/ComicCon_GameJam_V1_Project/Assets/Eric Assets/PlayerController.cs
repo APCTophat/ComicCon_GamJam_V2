@@ -97,21 +97,21 @@ public class PlayerController : MonoBehaviour
 
             MoveSound.Play();
         }
-        if (Input.GetKeyDown(KeyCode.S) && DirectionOK[1] == true)
+        if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && DirectionOK[1] == true)
         {
             LerpEnd = new Vector3(Tr_Player.position.x, Tr_Player.position.y, Tr_Player.position.z - MovementUnit);
             SetLerpCharacter();
 
             MoveSound.Play();
         }
-        if (Input.GetKeyDown(KeyCode.A) && DirectionOK[3] == true)
+        if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) )&& DirectionOK[3] == true)
         {
             LerpEnd = new Vector3(Tr_Player.position.x - MovementUnit, Tr_Player.position.y, Tr_Player.position.z);
             SetLerpCharacter();
 
             MoveSound.Play();
         }
-        if (Input.GetKeyDown(KeyCode.D) && DirectionOK[2] == true)
+        if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow) )&& DirectionOK[2] == true)
         {
             LerpEnd = new Vector3(Tr_Player.position.x + MovementUnit, Tr_Player.position.y, Tr_Player.position.z);
             SetLerpCharacter();
